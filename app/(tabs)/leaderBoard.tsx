@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, FlatList, StyleSheet } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 
 type LeaderboardEntry = {
   name: string;
@@ -20,11 +20,11 @@ const leaderboardData: LeaderboardEntry[] = [
 const getBackgroundColor = (index: number): string => {
   switch (index) {
     case 0:
-      return "#FFF8DC"; // Gold sparkle
+      return "#FFD700"; // Gold
     case 1:
-      return "#F8F8FF"; // Silver sparkle
+      return "#C0C0C0"; // Silver
     case 2:
-      return "#FAEBD7"; // Bronze sparkle
+      return "#CD7F32"; // Bronze
     default:
       return "#F5F5F5";
   }
