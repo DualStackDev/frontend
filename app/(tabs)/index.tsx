@@ -1,5 +1,6 @@
 import React from "react";
 import { FlatList, Image, StyleSheet, Text, View } from "react-native";
+import { PieChart } from "react-native-gifted-charts";
 
 const index = () => {
   // Dummy data
@@ -8,11 +9,13 @@ const index = () => {
     rank: 1,
     photo: require("../../assets/photo.png"),
   };
+
   const pieData = [
-    { key: 1, value: 50, svg: { fill: "#600080" } },
-    { key: 2, value: 30, svg: { fill: "#9900cc" } },
-    { key: 3, value: 20, svg: { fill: "#c61aff" } },
+    { value: 54, color: "#fff644ff", text: "54%" },
+    { value: 40, color: "#5cde5cff", text: "30%" },
+    { value: 20, color: "#de3939ff", text: "26%" },
   ];
+
   const listData = [
     { key: "1", title: "Item 1" },
     { key: "2", title: "Item 2" },
@@ -32,7 +35,14 @@ const index = () => {
 
       {/* Middle Section */}
       <View style={styles.middleSection}>
-        {/* Middle section intentionally left blank */}
+        <PieChart
+          donut
+          showText
+          textColor="black"
+          radius={125}
+          textSize={12}
+          data={pieData}
+        />
       </View>
 
       {/* Bottom Section */}
@@ -99,6 +109,7 @@ const styles = StyleSheet.create({
   middleSection: {
     alignItems: "center",
     justifyContent: "center",
+
     flex: 1,
   },
   bottomSection: {
